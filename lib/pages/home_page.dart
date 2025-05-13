@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var numeroGerado = 0;
+  var quantidadedeCliques = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add_box),
         onPressed: () {
           setState(() {
+            quantidadedeCliques = quantidadedeCliques + 1;
             numeroGerado =
                 GeradorNumeroAleatorioService.gerarNumeroAleatorio(1000);
           });
