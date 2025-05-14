@@ -23,20 +23,27 @@ class _HomePageState extends State<HomePage> {
           style: GoogleFonts.roboto(),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text(
+      body: Container(
+        width: double.infinity,
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Ações do usuário",
+                      style: GoogleFonts.acme(fontSize: 20),
+                      ),
+            Text(
               "Foi cliado $quantidadedeCliques vezes",
-          style: GoogleFonts.acme(fontSize: 20),
-          )),
-          Center(
-            child: Text(
+                      style: GoogleFonts.acme(fontSize: 20),
+                      ),
+            Text(
               "O número gerado foi $numeroGerado",
-          style: GoogleFonts.acme(fontSize: 20),
-          )),
-        ],
+                      style: GoogleFonts.acme(fontSize: 20),
+                      ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add_box),
