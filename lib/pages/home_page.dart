@@ -30,14 +30,19 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              color: Colors.cyan,
-              child: Text(
-                "Ações do usuário",
-                style: GoogleFonts.acme(fontSize: 20),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                color: Colors.cyan,
+                child: Text(
+                  "Ações do usuário",
+                  style: GoogleFonts.acme(fontSize: 20),
+                ),
               ),
             ),
-            Expanded(
+            SizedBox(
+              width: 100,
+              height: 100,
               child: Container(
                 color: Colors.orange,
                 child: Text(
@@ -47,48 +52,52 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
+              width: double.infinity,
               color: Colors.indigo,
               child: Text(
                 "O número gerado foi $numeroGerado",
                 style: GoogleFonts.acme(fontSize: 20),
               ),
             ),
-            Container(
-              color: Colors.grey,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.red,
-                      child: Text(
-                        "Nome:",
-                        style: GoogleFonts.acme(fontSize: 20),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                color: Colors.grey,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        color: Colors.red,
+                        child: Text(
+                          "Nome:",
+                          style: GoogleFonts.acme(fontSize: 20),
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Container(
-                      color: Colors.blue,
-                      child: Text(
-                        "Abner Valverde",
-                        style: GoogleFonts.acme(fontSize: 20),
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        color: Colors.blue,
+                        child: Text(
+                          "Abner Valverde",
+                          style: GoogleFonts.acme(fontSize: 20),
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Container(
-                      color: Colors.green,
-                      child: Text(
-                        "30",
-                        style: GoogleFonts.acme(fontSize: 20),
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        color: Colors.green,
+                        child: Text(
+                          "30",
+                          style: GoogleFonts.acme(fontSize: 20),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             )
           ],
