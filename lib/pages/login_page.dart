@@ -58,34 +58,57 @@ class _LoginPageState extends State<LoginPage> {
                 margin: EdgeInsets.symmetric(horizontal: 30),
                 height: 30,
                 alignment: Alignment.center,
-                child: TextField(
+                child: const TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.person,color: Colors.red,)
-                  ),
+                    contentPadding: EdgeInsets.only(top: -3),
+                    enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 111, 9, 194),
+                          ),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 111, 9, 194),
+                          ),
+                        ),
+                      hintText: "E-mail",
+                      hintStyle: TextStyle(color: Colors.white),
+                      prefixIcon: Icon(
+                        Icons.account_box,
+                        color: const Color.fromARGB(255, 111, 9, 194),
+                      )),
                 ),
               ),
+              const SizedBox(height: 15,),
               Container(
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                height: 30,
-                alignment: Alignment.center,
-                child: Row(
-                  children: [
-                    Expanded(
-                        flex: 2,
-                        child: Text(
-                          "Informe a senha:",
-                          style: TextStyle(color: Colors.white),
+                  width: double.infinity,
+                  margin: const EdgeInsets.symmetric(horizontal: 30),
+                  height: 30,
+                  alignment: Alignment.center,
+                  child: const TextField(
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.only(top: -3),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 111, 9, 194),
+                          ),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 111, 9, 194),
+                          ),
+                        ),
+                        hintText: "Senha",
+                        hintStyle: TextStyle(color: Colors.white),
+                        prefixIcon: Icon(
+                          Icons.lock,
+                          color: Color.fromARGB(255, 111, 9, 194),
+                        ),
+                        suffixIcon: Icon(
+                          Icons.visibility_off,
+                          color: Color.fromARGB(255, 237, 236, 238),
                         )),
-                    Expanded(
-                        flex: 3,
-                        child: Text(
-                          "Senha",
-                          style: TextStyle(color: Colors.white),
-                        )),
-                  ],
-                ),
-              ),
+                  )),
               const SizedBox(
                 height: 30,
               ),
@@ -98,20 +121,16 @@ class _LoginPageState extends State<LoginPage> {
                   child: TextButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)
-                          )
-                        ),
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
                         backgroundColor: MaterialStateProperty.all(
                             const Color.fromARGB(255, 111, 9, 194)),
                       ),
-                      child: Text("ENTRAR",
+                      child: const Text("ENTRAR",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 12,
-                              fontWeight: FontWeight.w400)
-                              )),
+                              fontWeight: FontWeight.w400))),
                 ),
               ),
               Expanded(child: Container()),
