@@ -133,10 +133,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: TextButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10))),
-                          backgroundColor: MaterialStateProperty.all(
+                          shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                          backgroundColor: WidgetStateProperty.all(
                               const Color.fromARGB(255, 111, 9, 194)),
                         ),
                         child: const Text("ENTRAR",
