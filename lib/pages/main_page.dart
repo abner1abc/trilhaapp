@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trilhaapp/pages/dados_cadastrais.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -23,31 +24,40 @@ class _MainPageState extends State<MainPage> {
               children: [
                 InkWell(
                   child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 5),
+                      padding: const EdgeInsets.symmetric(vertical: 5),
                       width: double.infinity,
-                      child: Text("Dados cadastrais")),
-                  onTap: () {},
+                      child: const Text("Dados cadastrais")),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DadosCadastraisPage(
+                                  texto: "Meus dados",
+                                  dados: ["Nome", "Endereço"],
+                                )));
+                  },
                 ),
-                Divider(),
-                SizedBox(
+                const Divider(),
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
                   child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 5),
+                      padding: const EdgeInsets.symmetric(vertical: 5),
                       width: double.infinity,
-                      child: Text("Temos de uso e privacidade")),
+                      child: const Text("Temos de uso e privacidade")),
                   onTap: () {},
                 ),
-                Divider(),
-                SizedBox(
+                const Divider(),
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
                   child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 5),
+                      padding: const EdgeInsets.symmetric(vertical: 5),
                       width: double.infinity,
-                      child: Text("Configurações")),
+                      child: const Text("Configurações")),
                   onTap: () {},
                 ),
               ],
