@@ -12,8 +12,17 @@ class DadosCadastraisPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(texto),
       ),
-      body: Center(
-        child: Text(dados.length.toString()),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        child: Column(
+          children: [
+            Text(
+              "Nome",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+            ),
+            TextField()
+          ],
+        ),
       ),
     );
   }
