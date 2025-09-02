@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trilhaapp/repositories/nivel_repository.dart';
 import 'package:trilhaapp/shared/wigets/text_label.dart';
 
 class DadosCadastraisPage extends StatefulWidget {
@@ -14,6 +15,15 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
   var nomeController = TextEditingController(text: "");
   var dataNascimentoController = TextEditingController(text: "");
   DateTime? dataNascimento;
+  var nivelRepository = NivelRepository();
+  var niveis = [];
+  var nivelSelecionado = "";
+
+  @override
+  void initState() {
+    niveis = nivelRepository.retornaNiveis();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,26 +38,36 @@ class _DadosCadastraisPageState extends State<DadosCadastraisPage> {
             TextField(
               controller: nomeController,
             ),
-            const SizedBox(
-              height: 15,
-            ),
             const TextLabel(texto: "Data de Nascimento"),
             TextField(
-              controller: dataNascimentoController,
-              readOnly: true,
-              onTap: () async {
-                var data = await showDatePicker(
-                    context: context,
-                    initialDate: DateTime(2000, 1, 1),
-                    firstDate: DateTime(1900, 5, 20),
-                    lastDate: DateTime(2023, 10, 23));
-                if (data != null) {
-                  dataNascimentoController.text = data.toString();
-                  dataNascimento = data;
-                }
-                ;
-              },
-            ),
+                controller: dataNascimentoController,
+                readOnly: true,
+                onTap: () async {
+                  var data = await showDatePicker(
+                      context: context,
+                      initialDate: DateTime(2000, 1, 1),
+                      firstDate: DateTime(1900, 5, 20),
+                      lastDate: DateTime(2023, 10, 23));
+                  if (data != null) {
+                    dataNascimentoController.text = data.toString();
+                    dataNascimento = data;
+                  }
+                }),
+            const TextLabel(texto: "Nível de Experiência"),
+            Column(
+                children: niveis
+                    .map((nivel) => RadioListTile(
+                        title: Text(nivel.toString()),
+                        selected: nivelSelecionado == nivel,
+                        value: nivel.toString(),
+                        groupValue: nivelSelecionado,
+                        onChanged: (value) {
+                          print(value);
+                          setState(() {
+                            nivelSelecionado = value.toString();
+                          });
+                        }))
+                    .toList()),
             TextButton(
                 onPressed: () {
                   print(nomeController.text);
