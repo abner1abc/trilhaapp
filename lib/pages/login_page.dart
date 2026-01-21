@@ -161,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                     content: Text(
-                                        "Erro ao efetuar o login. Email e Senha incorretos! teste teste  ")));
+                                        "Erro ao efetuar o login. Email e Senha incorretos!")));
                           }
                         },
                         style: ButtonStyle(
